@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <head>
         <title>Gratitude Journal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="index.css">
@@ -23,11 +23,24 @@
             <button id="Addnotes">Add Notes</button>
             
         </div>
-        <h3>--------- Endorsements ---------</h3>
+        <h3>-------- Endorsements --------</h3>
         
         <ul id="noteList">
             
         </ul>
+        
+        <div class="modal" id="modal">
+            <div class="modal-inner" id="modal-inner">
+                <h2>Are you sure?</h2>
+                <p class="modal-text" id="modal-text">
+                     This Page will be permanently deleted
+                </p>
+                
+                <button id="acceptdeletedPage" class="yesorno">Yes</button>
+                <button id="declinerestorePage" class="yesorno">No</button>
+                
+            </div>
+	    </div>
         
         <script src="index.js" type="module"></script>
     </body>

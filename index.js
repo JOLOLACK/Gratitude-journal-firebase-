@@ -12,6 +12,8 @@ const gratitudeList = ref(database, "Notes")
 const inputField = document.getElementById("input-field") 
 const noteListEL = document.getElementById("noteList")
 const AddNotesBT = document.getElementById("Addnotes")
+const AcceptdeletedPageBTN = document.getElementById("acceptdeletedPage")
+const declinerestorePageBTN = document.getElementById("declinerestorePage")
 
 const dateField = document.getElementById("date-field")
 
@@ -52,9 +54,18 @@ function displayfirebaseValues(EL){
     }
     
     newEl.addEventListener('dblclick',function(){
+        modal.style.display = 'inline'
         
-        let exactLocationOfItemInDB = ref(database, `Notes/${iditems}`)
+        AcceptdeletedPageBTN.addEventListener('click',function(){
+            
+            let exactLocationOfItemInDB = ref(database, `Notes/${iditems}`)
             remove(exactLocationOfItemInDB)
+            modal.style.display = 'none'    
+        })
+        declinerestorePageBTN.addEventListener('click',function(){
+            modal.style.display = 'none'    
+        })
+        
         
     })
     newEl.append(dateEl)
